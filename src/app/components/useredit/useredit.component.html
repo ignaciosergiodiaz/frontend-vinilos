@@ -1,0 +1,50 @@
+<div class="col-lg-6" *ngIf="identity">
+    <div class="col-lg-6 mt-4">
+        <h1>Actualizar Mis Datos</h1>
+        <div *ngIf="errorMessage">
+            <div class="alert alert-info" role="alert">
+                <strong>Mensaje:</strong> {{errorMessage}}
+              </div>
+        </div>
+        <div *ngIf="alertRegister">
+            <div class="alert alert-info" role="alert">
+                <strong>Error</strong> {{alertRegister}}
+              </div>
+        </div>
+        <form #UserUpdateForm="ngForm" (ngSubmit)="onSubmit()"  class="col-md-10">
+            <p>
+                <label>Nombre : </label>
+                <input type="text" #name="ngModel" name="name" [(ngModel)]="user.name" class="form-control" required>
+                <span *ngIf="!name.valid && name.touched">
+                    El nombre es obligatorio
+                </span>
+            </p>
+            <p>
+                <label>Apellidos: </label>
+                <input type="text" #surname="ngModel" name="surname" [(ngModel)]="user.surname" class="form-control" required>
+                <span *ngIf="!surname.valid && surname.touched">
+                    El apellido es obligatorio
+                </span>
+            </p>
+            <p>
+                <label>Correo Eléctronico : </label>
+                <input type="email" #email="ngModel" name="email" [(ngModel)]="user.email" class="form-control" required>
+                <span *ngIf="!email.valid && email.touched">
+                    El correo es obligatorio
+                </span>
+            </p>
+
+                <label for="">Sube tu foto</label>
+                <input type="file" name="image" placeholder="subir imagen..." (change)="fileChangeEvent($event)">
+
+                <div class="image_for_edit d-flex mt-4" *ngIf="user.image && user.image != 'undefined' ">
+                    <img src="{{url+'/get-image-user/'+user.image}}" alt="profile" width="200" />
+                </div>
+
+
+            <div id="identity_name"></div>
+
+            <input type="submit" value="Editar datos" class="btn btn-primary d-flex mt-4">
+        </form>
+    </div>
+</div>
