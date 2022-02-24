@@ -1,55 +1,66 @@
+<div class="row col-lg-12">
 
-<div *ngIf="identity" class="navigation col-lg-1"> 
+  <div *ngIf="identity" class="navigation col-lg-1">
 
-    <h1>
+    <h1 class="head-title">
+      <a [routerLink]="['/']">
+
+        <span class="material-icons">
+          music_note
+        </span>
         {{title}}
+      </a>
     </h1>
-    
-    <div id="navigation">
-        <a href="#">
-            <i class="fas fa-search"></i> 
-            Buscar
-        </a>
-        <a href="#">
-            <i class="fas fa-star"></i> 
-            Artistas
-        </a>
-        <a href="#">
-            <i class="fas fa-book"></i> 
-            Albums
-        </a>
-      
-    </div>
 
-    <div id="user_logged">
+    <nav id="navigation">
+        <a href="#">
+          <span class="material-icons">
+            search
+          </span>            Buscar
+        </a>
+        <a href="#">
+          <span class="material-icons">
+            interpreter_mode
+            </span>          Artistas
+        </a>
+        <a href="#">
+          <span class="material-icons">
+            album
+          </span>          Albums
+        </a>
+    </nav>
+
+    <nav id="user_logged">
         <div class="user-image">
-            <div class="image_for_edit"  *ngIf="user.image && user.image != 'null' ">
-                <img src="{{url+'get-image-user/'+identity.image}}" alt="profile" style="width:60px;" />
+            <div class="image_for_edit" id="image-logged "  *ngIf="identity.image && identity.image != 'null' ">
+                <img src="{{url+'get-image-user/'+identity.image}}" alt="profile"  />
             </div>
         </div>
+        <br>
+        <button >
+          <span class="material-icons">
+            settings
+          </span>
 
-        <span id="identity_name">
-           Hola  {{identity.name}} 
-        </span>
-        <p>Estás logueado en la aplicación</p>
+          settings
+        </button>
+        <button (click)="logoOut()">
+          <span class="material-icons">
+            logout
+          </span>
+          salir
+        </button>
 
-        <a [routerLink]="['mis-datos']">
-            <i class="fas fa-user"></i> 
-            Mis datos
-        </a>
+    </nav>
 
-       
-    </div>
-    <button class="btn btn-warning " (click)="logoOut()">
-        <i class="fas fa-power-off"></i> 
-
-        Cerrar Sesión
-    </button>
 </div>
 
-<div *ngIf="identity" class="central col-lg-11">
+<div *ngIf="identity" class=" central col-lg-10">
     <router-outlet></router-outlet>
 </div>
+
+</div>
+
 
 <div class="row col-lg-12" *ngIf="!identity">
 
@@ -75,7 +86,7 @@
             <input type="submit" value="Entrar" class="btn btn-primary">
         </form>
     </div>
-    
+
     <div class="col-lg-6 mt-4">
         <h1>Registrate</h1>
         <div *ngIf="alertRegister">
@@ -115,6 +126,6 @@
             <input type="submit" value="Registrar" class="btn btn-primary">
         </form>
     </div>
-    
+
 
 </div>
