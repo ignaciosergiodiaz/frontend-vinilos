@@ -1,1 +1,6 @@
-<p>artist works!</p>
+<div class="head-page" *ngIf="identity">
+  <h1>{{titulo}}</h1>
+  <a  *ngIf="identity && identity.role == 'ROLE_ADMIN' " class="btn btn-success">
+    Añadir Artista
+  </a>
+</div>

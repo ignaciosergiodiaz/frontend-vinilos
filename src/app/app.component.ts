@@ -4,6 +4,7 @@ import { User } from './models/user';
 import { GLOBAL } from './services/global';
 
 import { UserService } from './services/user.services';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -25,11 +26,14 @@ export class AppComponent implements OnInit  {
   public url : any;
 
   constructor(
-    public _userService: UserService
+    public _userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router,
   ){
     this.user = new User('', '', '', '','', 'ROLE_USER', '');
     this.userRegister = new User('', '', '', '','', 'ROLE_USER', '');
     this.url = GLOBAL.url ;
+
 
   }
 
@@ -65,6 +69,8 @@ export class AppComponent implements OnInit  {
 
     this.identity = null ;
     this.token = null ;
+
+    this.router.navigate(['/'])
 
   }
 

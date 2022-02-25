@@ -3,7 +3,7 @@
   <div *ngIf="identity" class="navigation col-lg-1">
 
     <h1 class="head-title">
-      <a [routerLink]="['/']">
+      <a [routerLink]="['']">
 
         <span class="material-icons">
           music_note
@@ -18,12 +18,12 @@
             search
           </span>            Buscar
         </a>
-        <a href="#">
+        <a [routerLink]='["artists", 1]'[routerLinkActive]="['actived']">
           <span class="material-icons">
             interpreter_mode
             </span>          Artistas
         </a>
-        <a href="#">
+        <a [routerLink]='["mis-datos"]'>
           <span class="material-icons">
             album
           </span>          Albums
@@ -37,7 +37,7 @@
             </div>
         </div>
         <br>
-        <button >
+        <button [routerLink]="['mis-datos']" >
           <span class="material-icons">
             settings
           </span>
