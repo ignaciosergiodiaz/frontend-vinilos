@@ -30,26 +30,29 @@
         </a>
     </nav>
 
+
     <nav id="user_logged">
-        <div class="user-image">
+
+      <hr class="hr">
+
+        <button class="user-image" [routerLink]="['mis-datos']" >
             <div class="image_for_edit" id="image-logged "  *ngIf="identity.image && identity.image != 'null' ">
                 <img src="{{url+'get-image-user/'+identity.image}}" alt="profile"  />
             </div>
-        </div>
-        <br>
-        <button [routerLink]="['mis-datos']" >
-          <span class="material-icons">
-            settings
-          </span>
 
-          settings
         </button>
+
+        <br>
+
         <button (click)="logoOut()">
           <span class="material-icons">
             logout
           </span>
           salir
         </button>
+
+        <br>
+        <br>
 
     </nav>
 

@@ -1,0 +1,68 @@
+<a [routerLink]="['/artist-add']" *ngIf="identity && identity.role == 'ROLE_ADMIN'" class="crear-artistas col-lg-4 btn btn-success">
+  Añadir Artista
+</a>
+<div class="head-page">
+  <h1 class=" ml-5 mt-4 text-left title ">{{titulo}}</h1>
+
+
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" [routerLink]="['/artists', prev_page]" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+
+      <li class="page-item">
+        <a  [routerLink]="['/artists', next_page]" class="page-link" href="#" aria-label="Next">
+          <span   aria-hidden="true">&raquo;</span>
+          <span  class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<!--
+  <ul class="pagintation page-link">
+    <li><a [routerLink]="['/artists', prev_page]">&laquo;</a></li>
+    <li><a [routerLink]="['/artists', next_page]">&raquo;</a></li>
+
+  </ul> -->
+
+
+</div>
+
+
+
+<div class="clear-fix"></div>
+
+
+<ul class="artist-list mt-4 row" *ngIf="identity">
+
+
+  <li *ngFor="let artist of artists" class="col-lg-2 artist-item">
+
+      <img src="{{url+'get-image-artist/'+artist.image}}" width="200px" alt="">
+      <br>
+      <br>
+     {{artist.name}}
+     <br>
+      <p>{{artist.description}}</p>
+
+      <br>
+
+     <a [routerLink]="['/editar-artista', artist._id]" class="buttons btn btn-warning"> Editar <span class="material-icons">edit</span></a>
+     <a [routerLink]="['/borrar-artista', artist._id]" class="buttons btn btn-danger"> Borrar <span class="material-icons">delete</span></a>
+
+  </li>
+
+</ul>
+
+<br>
+<br>
+<div class="container">
+
+
+</div>

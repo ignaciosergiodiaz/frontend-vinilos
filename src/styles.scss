@@ -55,26 +55,70 @@ button{
 #user_logged .material-icons{
   font-size:30px;
   display: block;
-}
-
-#user_logged .user-image{
-  background:#eee;
-  border-radius: 100%;
-  height: 70px;
-  width: 70px;
-  margin:0px auto;
-  margin-top:10px;
-  overflow: hidden;
-
+  width: 100%;
 }
 
 #user_logged .user-image img{
-  width:125px;
+  width:80px;
+  height: 80px;
+  border-radius: 125px;
   position: relative;
-  right:28px;
+  top:-50px;
 }
 
 .actived{
   border-bottom: 4px solid #84bd00;
   padding-bottom: 4px;
+}
+
+.hr{
+  position: relative;
+  top:-60px;
+  border: 1px solid #ddd;
+}
+
+li{
+  list-style: none;
+}
+
+.artist-item{
+  margin:0px auto;
+  text-align: center;
+  padding:0px;
+  height: auto;
+  margin-top:30px;
+  border:#000 1px solid ;
+  list-style-type: none;
+  background:#1C1C1F;
+  color:#fff;
+}
+
+.artist-item p{
+  width: 50%;
+  height: 120px;
+  padding-bottom:10px;
+  position: relative;
+  margin:0 auto;
+}
+
+.artist-item img{
+  width: 100%;
+  height: 170px;
+}
+
+.title{
+  position: relative;
+  left:3%;
+}
+
+.crear-artistas{
+  margin-right:2%;
+  float:right;
+}
+
+.buttons{
+  display: block;
+  margin-top:5px;
+  color:#fff;
+  bottom: 0px;
 }

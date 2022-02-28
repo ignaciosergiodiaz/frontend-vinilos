@@ -14,7 +14,6 @@ import { UserService } from 'src/app/services/user.services';
 export class ArtistComponent implements OnInit {
 
   titulo: string = "" ;
-  artists: Artist[] = [];
   identity: any;
   token: any;
   url : string = "";
@@ -30,10 +29,13 @@ export class ArtistComponent implements OnInit {
     this.identity = this.userService.getIdentity();
     this.token = this.userService.getToken();
     this.url = GLOBAL.url ;
-
    }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+
   }
 
 }
