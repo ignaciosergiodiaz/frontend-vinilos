@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { Artist } from 'src/app/models/artist';
+
 import { ArtistsService } from 'src/app/services/artists.services';
 import { GLOBAL } from 'src/app/services/global';
 import { UserService } from 'src/app/services/user.services';
+import { Artist } from 'src/app/models/artist';
 
 @Component({
   selector: 'app-artist-list',
@@ -14,9 +15,11 @@ import { UserService } from 'src/app/services/user.services';
 })
 export class ArtistListComponent implements OnInit {
 
+
   titulo: string = "" ;
-  artist: any ;
+
   artists:any;
+
   identity: any;
   token: any;
   url : string = "";
@@ -25,20 +28,21 @@ export class ArtistListComponent implements OnInit {
   next_page: number;
   prev_page: number;
 
+  confirmado : any;
+
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
     private _userService: UserService,
     private _artistService: ArtistsService
   ) {
-    this.titulo = 'Artistas';
-    this.identity = this._userService.getIdentity();
-    this.token = this._userService.getToken();
-    this.url = GLOBAL.url ;
-    this.artists = new Artist('','','');
 
-    this.next_page = 1 ;
-    this.prev_page = 1 ;
+		this.titulo = 'Artistas';
+		this.identity = this._userService.getIdentity();
+		this.token = this._userService.getToken();
+		this.url = GLOBAL.url;
+		this.next_page = 1;
+		this.prev_page = 1;
 
   }
 
@@ -69,7 +73,7 @@ export class ArtistListComponent implements OnInit {
             this._router.navigate(['/']);
           }else{
             this.artists = response.artists;
-            console.log(response.artists)
+            // console.log(response.artists)
           }
         },
         err => {
@@ -79,5 +83,45 @@ export class ArtistListComponent implements OnInit {
 
     })
   }
+
+
+  onDeleteConfirm(id:any){
+    this.confirmado = id ;
+  }
+
+  onCancelArtist(){
+      this.confirmado = null ;
+  }
+
+  onDeleteArtist(id:any){
+    this._artistService.deleteArtist(this.token, id).subscribe(
+
+        response => {
+          console.log(response.artist)
+
+          if(!response.artist){
+            alert('Error en el servidor')
+          }
+
+          this.alertMessage = "¡El artista se ha borrado correctamente!";
+
+          this.getArtists();
+        },
+
+        error => {
+
+          var errorMessage = <any>error ;
+
+          if(errorMessage != null ) {
+
+            var body = JSON.parse(error._body);
+            console.log(error);
+
+          }
+
+        }
+
+    )
+}
 
 }

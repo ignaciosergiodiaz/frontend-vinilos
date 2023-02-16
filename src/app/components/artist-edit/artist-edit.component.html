@@ -28,10 +28,10 @@
   </p>
 
   <div *ngIf="is_edit">
-    <div class="image_for_edit" *ngIf="artist.image  !== 'null'">
-      <img src="{{url+'get-image-artist/'+artist.image}}" alt="">
-    </div>
-    <br>
+    <div class="artist-image">
+			<img src="{{url+'get-image-artist/'+artist.image }}"/>
+		</div>
+
     <p>
       <label for="">sube la imagen del artist</label>
       <input type="file" placeholder="Subir imagen..." (change)="fileChangeEvent($event)">

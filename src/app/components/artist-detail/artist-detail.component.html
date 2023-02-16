@@ -1,1 +1,29 @@
-<p>artist-detail works!</p>
+<h1 class="text-center mt-5">{{titulo}}</h1>
+
+<div class="container">
+
+  <div *ngIf="alertMessage" class="text-center col-lg-12 mt-3">
+    <div class="alert alert-info  text-center">
+      {{alertMessage}}
+    </div>
+  </div>
+
+</div>
+
+<div class="col-lg-6 offset-3 mt-4" >
+  <p>
+    {{artist.name}}
+  </p>
+
+  <p>
+    {{artist.description}}
+  </p>
+
+  <div *ngIf="is_edit">
+    <div class="artist-image">
+			<img src="{{url+'get-image-artist/'+artist.image }}"/>
+		</div>
+  </div>
+
+
+</div>

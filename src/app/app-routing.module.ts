@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'editar-artista/:id', component:ArtistEditComponent},
   {path: 'artista/:id', component:ArtistGetComponent},
   {path: 'artists/:page', component:ArtistListComponent},
-  {path: '**', component: UsereditComponent}
+  {path: '**', component: HomeComponent}
 
 ];
 

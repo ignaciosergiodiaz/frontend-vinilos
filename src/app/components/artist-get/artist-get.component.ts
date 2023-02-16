@@ -15,7 +15,7 @@ import { UserService } from 'src/app/services/user.services';
 export class ArtistGetComponent implements OnInit {
 
   titulo: string = "" ;
-  artist: Artist ;
+  artist: any;
   identity: any;
   token: any;
   url : string = "";
@@ -27,14 +27,15 @@ export class ArtistGetComponent implements OnInit {
     private _userService: UserService,
     private _artistService: ArtistsService
   ) {
-    this.titulo = 'Editar Artista';
+    this.titulo = 'Artista';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url ;
-    this.artist = new Artist('','','');
+
   }
 
   ngOnInit(): void {
+    this.getArtist();
   }
 
   getArtist(){
@@ -44,6 +45,7 @@ export class ArtistGetComponent implements OnInit {
 
       this._artistService.getArtist(this.token, id).subscribe(
         response => {
+          this.artist = response.artist;
           console.log(response.artist)
         },
         error => {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.services';
 import { GLOBAL } from 'src/app/services/global';
+import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-useredit',
@@ -24,7 +25,8 @@ export class UsereditComponent implements OnInit {
   url : any =  GLOBAL.url;
 
   constructor(
-      private _userService: UserService
+      private _userService: UserService,
+
     ) {
       this.titulo = "Actualizar mis datos ";
       this.identity = this._userService.getIdentity();
@@ -35,6 +37,7 @@ export class UsereditComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('user-edit.component.ts cargado');
   }
 
   public filesToUpload: Array<File> = []  ;

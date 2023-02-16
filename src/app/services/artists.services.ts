@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpRequest } from '@angular/com
 import { map } from "rxjs/operators";
 import { GLOBAL } from './global';
 import { Artist } from "../models/artist";
+import { Observable } from "rxjs";
 
 @Injectable()
 
@@ -83,7 +84,7 @@ export class ArtistsService{
   }
 
 
-  deleteArtist(token:any, id:string){
+  deleteArtist(token:any, id:string):Observable<any>{
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -92,7 +93,7 @@ export class ArtistsService{
       })
     }
 
-    return this.http.get(this.url+'artist/'+id,  httpOptions )
+    return this.http.delete(this.url+'artist/'+id,  httpOptions )
             .pipe(map(res => res));
 
   }
