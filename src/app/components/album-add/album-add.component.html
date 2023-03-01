@@ -1,1 +1,36 @@
-<p>album-add works!</p>
+<h1 class="text-center pt-4 mt-5">{{titulo}}</h1>
+
+
+
+<form #formAlbum="ngForm" class="col-lg-6 offset-3 mt-4" (ngSubmit)="onSubmit()">
+
+  <p>
+    <label for="">Titulo</label>
+    <input type="text" #title="ngModel" class="form-control" placeholder="Ej: Grandes Éxitos" name="title" [(ngModel)]="album.title" required />
+    <span *ngIf="!title.valid && title.touched">
+      El titulo es obligatorio
+    </span>
+  </p>
+
+  <p>
+    <label for="">Descripción</label>
+    <textarea class="form-control" #description="ngModel" name="description" [(ngModel)]="album.description" placeholder="Descripción del album" id="floatingTextarea2" style="height: 100px"></textarea>
+
+
+    <span *ngIf="!description.valid && description.touched">
+      La descripción es obligatoria
+    </span>
+  </p>
+
+  <p>
+    <label for="">Año</label>
+    <input type="text" #year="ngModel" class="form-control" placeholder="Ej: 2020" name="year" [(ngModel)]="album.year" required />
+    <span *ngIf="!year.valid && year.touched">
+      El año es obligatorio
+    </span>
+  </p>
+
+
+  <input type="submit" class="btn btn-primary btn-block" [disabled]="!formAlbum.form.valid" value="Crear Album">
+
+</form>

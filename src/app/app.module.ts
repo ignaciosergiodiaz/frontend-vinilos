@@ -22,6 +22,10 @@ import { ArtistDetailComponent } from './components/artist-detail/artist-detail.
 import { AlbumEditComponent } from './components/album-edit/album-edit.component';
 import { AlbumDeleteComponent } from './components/album-delete/album-delete.component';
 import { AlbumAddComponent } from './components/album-add/album-add.component';
+import { AlbumGetComponent } from './components/album-get/album-get.component';
+import { AlbumsGetComponent } from './components/albums-get/albums-get.component';
+import { SongAddComponent } from './components/song-add/song-add.component';
+import { SongGetComponent } from './components/song-get/song-get.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { AlbumAddComponent } from './components/album-add/album-add.component';
     ArtistDetailComponent,
     AlbumEditComponent,
     AlbumDeleteComponent,
-    AlbumAddComponent
+    AlbumAddComponent,
+    AlbumGetComponent,
+    AlbumsGetComponent,
+    SongAddComponent,
+    SongGetComponent
   ],
   imports: [
     BrowserModule,

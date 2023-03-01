@@ -3,11 +3,8 @@
   <div *ngIf="identity" class="navigation col-lg-1">
 
     <h1 class="head-title">
-      <a [routerLink]="['']">
+      <a [routerLink]="['/']">
 
-        <span class="material-icons">
-          music_note
-        </span>
         {{title}}
       </a>
     </h1>
@@ -30,10 +27,7 @@
         </a>
     </nav>
 
-
-    <nav id="user_logged">
-
-      <hr class="hr">
+    <nav id="user_logged" class="pb-">
 
         <button class="user-image" [routerLink]="['mis-datos']" >
             <div class="image_for_edit" id="image-logged "  *ngIf="identity.image && identity.image != 'null' ">
@@ -42,16 +36,12 @@
 
         </button>
 
-
-
         <button (click)="logoOut()">
           <span class="material-icons">
             logout
           </span>
           salir
         </button>
-
-   
 
     </nav>
 

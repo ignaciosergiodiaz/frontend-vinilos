@@ -1,23 +1,55 @@
 <div *ngIf="artist">
 
-  <div class="artist-image  mt-5 row offset-2">
+  <div class="row artist-image  mt-5 pt-5 row offset-lg-2">
     <img src="{{url+'get-image-artist/'+artist.image}}" width="400"/>
 
-    <div class="col-lg-6 mt-5">
-      <div class="col-lg-12 offset-3 mt-4">
 
+    <div class="col-lg-6 mt-2">
+      <div class="col-lg-12 offset-3 mt-2">
         <h1>{{artist.name}}</h1>
-
         <p>
           {{artist.description}}
         </p>
-
+        <a [routerLink]="['/crear-album', artist._id]" class="btn btn-primary col-lg-4  mt-5">
+          Agregar Album
+        </a>
       </div>
     </div>
 
+    </div>
+
+    <div class="col-lg-12 pb-5 pt-5" *ngIf="albums">
+
+      <ul class="artist-list mt-4 row" *ngIf="albums" >
+        <li *ngFor="let album of albums" class="col-lg-2 artist-item">
+
+          <div class="artist-image" [routerLink]="['/detalle-album', album._id]" style="cursor:pointer !important;">
+            <img [src]="url+'get-image-album/'+album.image"/>
+          </div>
+
+          <div class="pt-5">
+            <a  >
+              {{album.title}}
+            </a>
+          </div>
+
+
+          <p class="description-text pb-5 mb-5 mt-4">{{album.description}}</p>
+
+          <a [routerLink]="['/editar-album', album._id]" class="buttons btn btn-warning"> Editar <span class="material-icons">edit</span></a>
+          <a (click)="onDeleteConfirm(album._id)" class="buttons btn btn-danger"> Borrar <span class="material-icons">delete</span></a>
+
+          <div class="seguro" *ngIf="confirmado == album._id">
+            <a (click)="onCancelAlbum()" class="buttons btn btn-primary"> Cancelar <span class="material-icons">cancel</span></a>
+            <a (click)="onDeleteAlbum(album._id)" class="buttons btn btn-danger"> Borrar Album <span class="material-icons">delete_forever</span></a>
+          </div>
+
+        </li>
+      </ul>
+
   </div>
 
-</div>
+
 
 
 

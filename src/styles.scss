@@ -14,7 +14,7 @@ button{
 .navigation{
   text-align: center;
   background-color: #1C1C1F;
-  height: 100vh;
+  height: auto;
 }
 
 .navigation a{
@@ -63,7 +63,8 @@ button{
   height: 80px;
   border-radius: 125px;
   position: relative;
-  top:-50px;
+  top:-200px;
+  right:9px;
 }
 
 .actived{

@@ -34,38 +34,35 @@
 </div>
 
 <div class="container">
-  <a  *ngIf="identity && identity.role == 'ROLE_ADMIN'" class="crear-artistas  btn btn-success mt-3" [routerLink]="['/artist-add']">
+  <a *ngIf="identity && identity.role == 'ROLE_ADMIN'" class="crear-artistas  btn btn-success mt-3" [routerLink]="['/artist-add']">
     Añadir Artista
   </a>
-
 </div>
-
 
 <div class="clear-fix"></div>
 
-<ul class="artist-list mt-4 row" *ngIf="identity">
+<ul class="artist-list mt-4 row" *ngIf="identity" >
+  <li *ngFor="let artist of artists" class="col-lg-2 artist-item" >
 
-  <li *ngFor="let artist of artists" class="col-lg-2 artist-item">
-
-    <div class="artist-image">
-			<img [src]=" url + 'get-image-artist/' + artist.image "/>
+    <div class="artist-image" [routerLink]="['/artista', artist._id]" style="cursor:pointer !important;">
+			<img [src]="url+'get-image-artist/'+artist.image"/>
 		</div>
-      <a [routerLink]="['/artista', artist._id]">
-				{{artist.name}}
-			</a>
 
-      <p>{{artist.description}}</p>
+    <div class="pt-5">
+      <a  >
+        {{artist.name}}
+      </a>
+    </div>
 
-     <a [routerLink]="['/editar-artista', artist._id]" class="buttons btn btn-warning"> Editar <span class="material-icons">edit</span></a>
-     <a (click)="onDeleteConfirm(artist._id)" class="buttons btn btn-danger"> Borrar <span class="material-icons">delete</span></a>
+    <p class="description-text pb-5 mb-5 mt-4">{{artist.description}}</p>
 
-     <div class="seguro" *ngIf="confirmado == artist._id">
+    <a [routerLink]="['/editar-artista', artist._id]" class="buttons btn btn-warning"> Editar <span class="material-icons">edit</span></a>
+    <a (click)="onDeleteConfirm(artist._id)" class="buttons btn btn-danger"> Borrar <span class="material-icons">delete</span></a>
+
+    <div class="seguro" *ngIf="confirmado == artist._id">
       <a (click)="onCancelArtist()" class="buttons btn btn-primary"> Cancelar <span class="material-icons">cancel</span></a>
       <a (click)="onDeleteArtist(artist._id)" class="buttons btn btn-danger"> Borrar Artista <span class="material-icons">delete_forever</span></a>
-     </div>
+    </div>
 
   </li>
-
 </ul>
-
-

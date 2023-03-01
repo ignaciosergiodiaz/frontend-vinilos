@@ -85,6 +85,8 @@ export class ArtistEditComponent implements OnInit {
             this.alertMessage = "¡El artista se ha editado correctamente!";
              this.artist = response.artist ;
 
+             //Subir la imágen de un artista
+
             this._uploadService.makeFileRequest(this.url+'upload-image-artist/'+id, [], this.filesToUpload, this.token, 'image' )
               .then(
                   (result)=>{

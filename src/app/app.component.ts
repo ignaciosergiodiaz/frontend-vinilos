@@ -15,7 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class AppComponent implements OnInit  {
 
-  public title = 'Melodys' ;
+  public title = 'Vinilo+' ;
   public user: User ;
   public userRegister: User ;
   public identity:any;
@@ -33,8 +33,6 @@ export class AppComponent implements OnInit  {
     this.user = new User('', '', '', '','', 'ROLE_USER', '');
     this.userRegister = new User('', '', '', '','', 'ROLE_USER', '');
     this.url = GLOBAL.url ;
-
-
   }
 
   ngOnInit(): void {
