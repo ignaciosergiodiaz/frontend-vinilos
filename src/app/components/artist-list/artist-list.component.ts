@@ -9,17 +9,14 @@ import { Artist } from 'src/app/models/artist';
 
 @Component({
   selector: 'app-artist-list',
-  templateUrl: './artist-list.component.html',
+  templateUrl: './../../views/artist-list.component.html',
   styleUrls: ['./artist-list.component.scss'],
   providers: [UserService, ArtistsService ]
 })
 export class ArtistListComponent implements OnInit {
 
-
   titulo: string = "" ;
-
   artists:any;
-
   identity: any;
   token: any;
   url : string = "";
@@ -27,7 +24,6 @@ export class ArtistListComponent implements OnInit {
   is_edit = true ;
   next_page: number;
   prev_page: number;
-
   confirmado : any;
 
   constructor(
@@ -37,13 +33,12 @@ export class ArtistListComponent implements OnInit {
     private _artistService: ArtistsService
   ) {
 
-		this.titulo = 'Artistas';
+		this.titulo = 'Tus artistas preferidos';
 		this.identity = this._userService.getIdentity();
 		this.token = this._userService.getToken();
 		this.url = GLOBAL.url;
 		this.next_page = 1;
 		this.prev_page = 1;
-
   }
 
   ngOnInit(): void {

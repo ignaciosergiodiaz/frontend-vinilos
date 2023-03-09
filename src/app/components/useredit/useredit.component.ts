@@ -6,7 +6,7 @@ import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-useredit',
-  templateUrl: './useredit.component.html',
+  templateUrl: './../../views/useredit.component.html',
   styleUrls: ['./useredit.component.scss'],
   providers:[UserService]
 })

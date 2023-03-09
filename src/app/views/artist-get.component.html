@@ -1,0 +1,73 @@
+<main class="row">
+
+  <div class="d-flex justify-content-end" style="position:relative; top:-40px;">
+    <a *ngIf="identity && identity.role == 'ROLE_ADMIN'" class="crear-artistas btn btn-success  col-lg-2" [routerLink]="['/crear-album', artist._id]">
+      Agregar un album
+    </a>
+  </div>
+
+
+  <div *ngIf="alertMessage" class="text-center col-lg-12">
+    <div class="alert alert-info  text-center">
+      {{alertMessage}}
+    </div>
+  </div>
+
+  <h1 class="ml-5 mt-3 text-left title-artist">Albums de {{artist.name}}</h1>
+
+  <div class="head-page">
+    <nav aria-label="Page navigation example">
+
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" [routerLink]="['/artists', prev_page]"
+          href="#" aria-label="Previous">
+            <span class="material-icons">
+            chevron_left
+            </span>
+            <span class="sr-only"></span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a  [routerLink]="['/artists', next_page]" class="page-link"
+          href="#" aria-label="Next">
+            <span class="material-icons">
+              chevron_right
+            </span>
+            <span  class="sr-only"></span>
+          </a>
+        </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="clear-fix"></div>
+
+  <ul class="col-lg-10 offset-lg-1 offset-xl-1 artist-list mt-4 row" *ngIf="identity">
+    <li *ngFor="let album of albums" class="col-xs-2 col-lg-3 col-xl-2 col-sm-2 col-md-3 offset-md-0 card artist-item" >
+
+      <div class="artist-image" [routerLink]="['/detalle-album', album._id]" style="cursor:pointer !important;">
+        <img [src]="url+'get-image-album/'+album.image"/>
+      </div>
+
+      <div class="pt-2">
+        <h5 class="title pb-5 title-card">
+          {{album.title}}
+        </h5>
+      </div>
+
+      <div *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+        <a [routerLink]="['/editar-artista', artist._id]" class="buttons btn btn-warning"> Editar <span class="material-icons">edit</span></a>
+        <a (click)="onDeleteConfirm(artist._id)" class="buttons btn btn-danger"> Borrar <span class="material-icons">delete</span></a>
+
+        <div class="seguro" *ngIf="confirmado == artist._id">
+          <a (click)="onCancelAlbum()" class="buttons btn btn-primary"> Cancelar <span class="material-icons">cancel</span></a>
+          <a (click)="onDeleteAlbum(album._id)" class="buttons btn btn-danger"> Borrar Artista <span class="material-icons">delete_forever</span></a>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
+</main>

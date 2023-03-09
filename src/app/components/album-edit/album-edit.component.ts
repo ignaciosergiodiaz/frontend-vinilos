@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.services';
 
 @Component({
   selector: 'app-album-add',
-  templateUrl: './album-edit.component.html',
+  templateUrl: './../../views/album-edit.component.html',
   styleUrls: ['./album-edit.component.scss'],
 
 providers: [UserService,AlbumService,UploadService ]

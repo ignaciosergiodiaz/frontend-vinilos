@@ -1,0 +1,91 @@
+@media (min-width:1025px){
+    .player{
+      height: 180px;
+    }
+}
+
+@media (max-width:1024px){
+
+  .profile-button{
+      position: relative;
+      top:-37px;
+      left:-90px;
+  }
+
+  .main-button{
+    position: relative;
+    left:20px;
+    top:25px;
+  }
+  .player{
+    height: 300px;
+  }
+}
+
+@media (max-width:768px){
+
+  .profile-button{
+      position: relative;
+      top:-37px;
+      left:-90px;
+  }
+
+  .main-button{
+    position: relative;
+    left:20px;
+    top:25px;
+  }
+  .player{
+    background-color: rgb(52, 52, 52);
+    height: 260px;
+  }
+}
+
+@media (max-width:425px){
+  .main-button{
+    position: relative;
+    left:-20px;
+  }
+
+  .profile-button{
+      position: relative;
+      left:-20px;
+  }
+  .player{
+    height: 280px;
+  }
+}
+
+@media (max-width:375px){
+  .main-button{
+    position: relative;
+    left:-20px;
+  }
+
+  .profile-button{
+      position: relative;
+      left:-20px;
+  }
+
+  .player{
+    height: 280px;
+  }
+
+}
+
+@media (max-width:320px){
+
+  .player{
+    height: 280px;
+  }
+
+  .main-button{
+    position: relative;
+    left:-20px;
+  }
+
+  .profile-button{
+      position: relative;
+      left:-6px;
+  }
+}

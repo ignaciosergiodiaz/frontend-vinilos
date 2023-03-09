@@ -9,24 +9,26 @@ import { ArtistsService } from 'src/app/services/artists.services';
 import { GLOBAL } from 'src/app/services/global';
 import { UserService } from 'src/app/services/user.services';
 
-
 @Component({
   selector: 'app-get-artist',
-  templateUrl: './artist-get.component.html',
+  templateUrl: './../../views/artist-get.component.html',
   styleUrls: ['./artist-get.component.scss'],
   providers: [UserService, ArtistsService, AlbumService]
 })
+
 export class ArtistGetComponent implements OnInit {
 
   titulo: string = "" ;
   artist?: any;
+  artists:any;
   albums: any ;
   identity: any;
   token: any;
   url : string = "";
   alertMessage : string ="" ;
   confirmado : any;
-
+  next_page: any;
+  prev_page:any;
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
@@ -83,7 +85,7 @@ export class ArtistGetComponent implements OnInit {
         }
 
     )
-}
+  }
 
 
   getArtist(){
@@ -125,14 +127,10 @@ export class ArtistGetComponent implements OnInit {
                 error => {
 
                   var errorMessage = <any>error ;
-
                   if(errorMessage != null ) {
-
                     // var body = JSON.parse(error._body);
                     console.log(error);
-
                   }
-
 
                 }
 

@@ -7,7 +7,7 @@ import { UserService } from 'src/app/services/user.services';
 
 @Component({
   selector: 'app-artist',
-  templateUrl: './artist.component.html',
+  templateUrl: './../../views/artist.component.html',
   styleUrls: ['./artist.component.scss'],
   providers: [UserService]
 })
@@ -22,9 +22,7 @@ export class ArtistComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService
-
   ) {
-
     this.titulo = 'Artistas';
     this.identity = this.userService.getIdentity();
     this.token = this.userService.getToken();

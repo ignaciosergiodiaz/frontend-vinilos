@@ -8,10 +8,9 @@ import { UserService } from 'src/app/services/user.services';
 
 @Component({
   selector: 'app-album-add',
-  templateUrl: './album-add.component.html',
+  templateUrl: './../../views/album-add.component.html',
   styleUrls: ['./album-add.component.scss'],
   providers: [UserService,AlbumService]
-
 })
 
 export class AlbumAddComponent implements OnInit {

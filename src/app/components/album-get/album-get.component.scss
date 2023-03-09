@@ -1,0 +1,466 @@
+.song-item{
+  background-color: #2f2f2faa;
+  border-radius:2rem;
+  width: 92%;
+  padding:0.8rem 4rem;
+  font-size: 1.2rem;
+  margin:0px !important;
+}
+
+.song-item:hover{
+  background-color: #696868aa;
+  cursor: pointer;
+}
+
+.playbutton{
+  border-radius: 60px !important;
+  width: 40px;
+  height: 40px ;
+}
+
+.icon{
+  position: relative;
+  top:-3px !important;
+  right:4px;
+}
+
+.editbutton{
+  border-radius: 4rem;
+  width: 4%;
+}
+
+.button{
+  border-radius: 4rem;
+  width: 4%;
+}
+
+.image-album{
+  width: 330px;
+}
+
+.menu-admin{
+  float:right;
+}
+.menu-admin a{
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.song-list{
+  height: 1600px !important;
+}
+
+.add-songs{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.gestor-admin{
+  position: relative;
+  right:30px;
+  top:-10px;
+}
+
+
+@media(min-width:789px){
+
+  .text-song-mobile{
+    display: none ;
+  }
+
+  .playbutton-mobile{
+    display: none ;
+  }
+}
+
+@media(max-width:768px){
+
+  .image-album{
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    left:80px;
+    padding: 2rem;
+    object-position: center;
+  }
+
+  .album-text{
+    text-align: center;
+    position: relative;
+    left:-13px;
+  }
+
+  .song-item{
+    width: 100%;
+    position: relative;
+    left:-30px;
+  }
+
+
+  .playbutton{
+    position: relative;
+    left:-50px;
+  }
+
+  .text-song{
+    width: 100% !important;
+  }
+
+
+  .playbutton-mobile{
+    position: relative;
+    left:-50px;
+    border-radius: 30px;
+  }
+
+  .playbutton{
+    display: none;
+  }
+
+
+  .text-song-mobile{
+
+    position: relative;
+    top:-40px;
+    left:20px;
+  }
+
+  .text-song{
+      display:none;
+  }
+
+  .icon-mobile{
+    position: relative;
+    top:-0px !important;
+  }
+
+}
+
+
+@media(max-width:500px){
+
+  .image-album{
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    left:10px;
+    padding: 2rem;
+    object-position: center;
+  }
+
+  .album-text{
+    text-align: center;
+    position: relative;
+    left:-20px;
+  }
+
+  .song-item{
+    width: 100%;
+    position: relative;
+    left:-30px;
+  }
+
+  .playbutton{
+    position: relative;
+    left:-50px;
+  }
+
+  .text-song{
+    width: 80% !important;
+  }
+
+
+  .playbutton-mobile{
+    position: relative;
+    left:-50px;
+    border-radius: 30px;
+  }
+
+  .playbutton{
+    display: none;
+  }
+
+  .text-song-mobile{
+    position: relative;
+    top:-40px;
+    left:20px;
+  }
+
+  .text-song{
+      display:none;
+  }
+
+
+  .icon-mobile{
+    position: relative;
+    top:-0px !important;
+  }
+
+}
+
+
+@media(max-width:425px){
+
+  .image-album{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    left:-85px;
+    padding: 2rem;
+    object-position: center;
+  }
+
+  .album-text{
+    text-align: center;
+    position: relative;
+    left:-13px;
+  }
+
+  .song-item{
+    width: 100%;
+    position: relative;
+    left:-30px;
+  }
+
+  .playbutton{
+    position: relative;
+    left:-50px;
+  }
+
+  .text-song{
+    width: 100% !important;
+  }
+
+
+  .playbutton-mobile{
+    position: relative;
+    left:-50px;
+    border-radius: 30px;
+  }
+
+  .playbutton{
+    display: none;
+  }
+
+  .text-song-mobile{
+    position: relative;
+    top:-40px;
+    left:20px;
+  }
+
+  .text-song{
+      display:none;
+  }
+
+
+  .icon-mobile{
+    position: relative;
+    top:-0px !important;
+  }
+
+}
+
+
+@media(max-width:390px){
+
+  .image-album{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    left:-74px;
+    padding: 2rem;
+    object-position: center;
+  }
+
+  .album-text{
+    text-align: center;
+    position: relative;
+    left:-13px;
+  }
+
+  .song-item{
+    width: 100%;
+    position: relative;
+    left:-30px;
+  }
+
+  .playbutton{
+    position: relative;
+    left:-50px;
+  }
+
+  .text-song{
+    width: 100% !important;
+  }
+
+  .song-item{
+    background-color: transparent !important ;
+  }
+
+
+  .playbutton-mobile{
+    position: relative;
+    left:-50px;
+    border-radius: 30px;
+  }
+
+  .playbutton{
+    display: none;
+  }
+
+
+  .icon-mobile{
+    position: relative;
+    top:-0px !important;
+  }
+
+
+  .text-song-mobile{
+
+    position: relative;
+    top:-40px;
+    left:20px;
+  }
+
+  .text-song{
+
+      display:none;
+  }
+
+
+
+}
+
+@media(max-width:375px){
+
+  .image-album{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    left:-74px;
+    padding: 2rem;
+    object-position: center;
+  }
+
+  .album-text{
+    text-align: center;
+    position: relative;
+    left:-13px;
+  }
+
+  .song-item{
+    width: 100%;
+    position: relative;
+    left:-30px;
+  }
+
+  .playbutton{
+    position: relative;
+    left:-50px;
+  }
+
+  .text-song{
+    width: 100% !important;
+  }
+
+  .song-item{
+    background-color: transparent !important ;
+  }
+
+
+  .playbutton-mobile{
+    position: relative;
+    left:-50px;
+    border-radius: 30px;
+  }
+
+  .playbutton{
+    display: none;
+  }
+
+
+  .icon-mobile{
+    position: relative;
+    top:-0px !important;
+  }
+
+
+  .text-song-mobile{
+
+    position: relative;
+    top:-40px;
+    left:20px;
+  }
+
+  .text-song{
+
+      display:none;
+  }
+
+
+
+}
+
+
+@media(max-width:320px){
+
+  .image-album{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    left:-62px;
+    padding: 2rem;
+    object-position: center;
+  }
+
+  .album-text{
+    text-align: center;
+    position: relative;
+    left:-13px;
+  }
+
+  .song-item{
+    width: 100%;
+    position: relative;
+    left:-30px;
+  }
+
+  .playbutton-mobile{
+    position: relative;
+    left:-50px;
+    border-radius: 30px;
+  }
+
+  .playbutton{
+    display: none;
+  }
+
+  .icon-mobile{
+    position: relative;
+    top:-0px !important;
+  }
+
+  .song-item{
+    background-color: transparent !important ;
+  }
+
+  .text-song-mobile{
+
+    position: relative;
+    top:-40px;
+    left:20px;
+  }
+
+  .text-song{
+
+      display:none;
+  }
+
+
+}

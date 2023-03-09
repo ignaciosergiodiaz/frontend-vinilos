@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.services';
 
 @Component({
   selector: 'app-artist-detail',
-  templateUrl: './artist-detail.component.html',
+  templateUrl: './../../views/artist-detail.component.html',
   styleUrls: ['./artist-detail.component.scss']
 })
 export class ArtistDetailComponent implements OnInit {

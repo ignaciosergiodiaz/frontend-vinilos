@@ -1,0 +1,259 @@
+
+.artist-image img{
+
+  height: 140px;
+}
+
+.main-albums{
+  height: 3000px;
+}
+
+
+.clear-fix{
+  display: block;
+  clear:both;
+}
+
+.pagination{
+  float:right;
+}
+
+.description-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+          line-clamp: 5;
+  -webkit-box-orient: vertical;
+
+}
+
+.artist-image img{
+  object-fit: cover;
+  object-position: center;
+  height: 140px;
+}
+
+.artist-item{
+  cursor:pointer !important;
+}
+
+.artist-list{
+  padding-bottom: 500px !important;
+
+}
+
+
+@media (max-width:1024px){
+
+  .artist-list{
+    position: relative;
+    left:117px;
+  }
+  .artist-item{
+    margin-right:0px;
+    background-color: transparent !important;
+  }
+  .head-page{
+    position: relative;
+    left:-25px;
+    top:30px;
+  }
+  .title-artist{
+    position: relative;
+    font-size: 2.4rem;
+    left:0px;
+    top:-5px;
+    text-align: center;
+  }
+}
+
+
+
+@media (max-width:768px){
+
+  .artist-list{
+    margin-left: 0px;
+    position: relative;
+    left:0px;
+  }
+  .artist-item{
+    margin-right:0px;
+    background-color: transparent !important;
+  }
+  .head-page{
+    position: relative;
+    left:-25px;
+    top:30px;
+  }
+  .title-artist{
+    position: relative;
+    font-size: 2.4rem;
+    left:0px;
+    top:-5px;
+    text-align: center;
+  }
+}
+
+@media (max-width:500px){
+
+  .artist-image img{
+    object-fit: contain;
+
+    height: 200px;
+  }
+
+
+    .artist-list{
+      margin-left: 0px;
+      position: relative;
+      left:-60px;
+    }
+
+    .head-page{
+      position: relative;
+      left:-25px;
+      top:30px;
+    }
+
+    .title-artist{
+      position: relative;
+      font-size: 1.6rem;
+      left:0px;
+      top:-5px;
+      text-align: center;
+    }
+
+    .artist-item{
+      position: relative;
+      left:-40px;
+      width:300px;
+      margin-top:1rem;
+    }
+}
+
+
+@media (max-width:425px){
+
+  .artist-list{
+    margin-left: 0px;
+    position: relative;
+    left:-60px;
+  }
+
+  .head-page{
+    position: relative;
+    left:-25px;
+    top:30px;
+  }
+
+  .title-artist{
+    position: relative;
+    font-size: 1.6rem;
+    left:0px;
+    top:-5px;
+    text-align: center;
+  }
+
+  .artist-item{
+    position: relative;
+    left:-26px;
+    width: 250px;
+    margin-top:1rem;
+  }
+}
+
+
+@media (max-width:390px){
+  .artist-list{
+    margin-left: 0px;
+    position: relative;
+    left:-38px;
+  }
+
+
+  .head-page{
+    position: relative;
+    left:-25px;
+    top:30px;
+  }
+
+  .title-artist{
+    position: relative;
+    font-size: 1.6rem;
+    left:0px;
+    top:-5px;
+    text-align: center;
+  }
+
+  .artist-item{
+    position: relative;
+    left:-26px;
+    width: 250px;
+    margin-top:1rem;
+  }
+
+}
+
+@media (max-width:375px){
+  .artist-list{
+    margin-left: 0px;
+    position: relative;
+    left:-30px;
+  }
+
+
+  .head-page{
+    position: relative;
+    left:-25px;
+    top:30px;
+  }
+
+  .title-artist{
+    position: relative;
+    font-size: 1.6rem;
+    left:0px;
+    top:-5px;
+    text-align: center;
+  }
+
+  .artist-item{
+    position: relative;
+    left:-26px;
+    width: 250px;
+    margin-top:1rem;
+  }
+
+}
+
+@media (max-width:320px){
+
+  .artist-list{
+    margin-left: 0px;
+    position: relative;
+    left:-4px;
+  }
+
+
+  .head-page{
+    position: relative;
+    left:-25px;
+    top:30px;
+  }
+
+  .title-artist{
+    position: relative;
+    font-size: 1.6rem;
+    left:0px;
+    top:-5px;
+    text-align: center;
+  }
+
+  .artist-item{
+    position: relative;
+    left:-26px;
+    width: 250px;
+    margin-top:1rem;
+  }
+
+}

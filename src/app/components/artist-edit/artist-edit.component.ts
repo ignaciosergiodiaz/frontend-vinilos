@@ -8,11 +8,12 @@ import { UploadService } from 'src/app/services/upload.service';
 import { UserService } from 'src/app/services/user.services';
 
 @Component({
-  selector: 'app-artist-add',
-  templateUrl: './artist-edit.component.html',
+  selector: 'app-artist-edit',
+  templateUrl: './../../views/artist-edit.component.html',
   styleUrls: ['./artist-edit.component.scss'],
   providers: [UserService, ArtistsService, UploadService]
 })
+
 export class ArtistEditComponent implements OnInit {
 
   titulo: string = "" ;
@@ -88,9 +89,10 @@ export class ArtistEditComponent implements OnInit {
              //Subir la imágen de un artista
 
             this._uploadService.makeFileRequest(this.url+'upload-image-artist/'+id, [], this.filesToUpload, this.token, 'image' )
+
               .then(
                   (result)=>{
-                    this._router.navigate(['/artista', response.artist._id]);
+                    this._router.navigate(['/listado-de-artistas']);
                   },
                   (error)=>{
                     console.log(error)

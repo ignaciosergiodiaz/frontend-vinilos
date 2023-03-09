@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.services';
 
 @Component({
   selector: 'app-artist-add',
-  templateUrl: './artist-add.component.html',
+  templateUrl: './../../views/artist-add.component.html',
   styleUrls: ['./artist-add.component.scss'],
   providers: [UserService, ArtistsService]
 })
@@ -32,7 +32,6 @@ export class ArtistAddComponent implements OnInit {
     this.token = this._userService.getToken();
     this.url = GLOBAL.url ;
     this.artist = new Artist('','','');
-
   }
 
   ngOnInit(): void {
@@ -47,8 +46,6 @@ export class ArtistAddComponent implements OnInit {
         }else{
           this.alertMessage = "¡El artista se ha creado, correctamente!";
           this.artist = response.artist ;
-
-          // this.router.navigate([''])
         }
       },
       error => {
@@ -56,7 +53,5 @@ export class ArtistAddComponent implements OnInit {
       }
     )
   }
-
-
 
 }

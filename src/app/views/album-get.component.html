@@ -1,0 +1,87 @@
+<div class="col-11 offset-1">
+
+  <div *ngIf="album">
+
+    <div class="row artist-image row">
+      <img src="{{url+'get-image-album/'+album.image}}" class="offset-2 image-album"/>
+      <div class="col-lg-7 mt-2 container">
+        <div class="col-lg-12 album-text offset-0 p-5 mt-2">
+          <h3>{{album.title}}</h3>
+          <h4>{{album.artist.name}}</h4>
+          <p>
+            {{album.description}}
+          </p>
+          <span class="gestor-admin" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+            <a [routerLink]="['/agregar-cancion', album._id]" class="btn btn-success add-songs col-lg-4 mt-5">
+              Agregar canciones
+            </a>
+          </span>
+        </div>
+    </div>
+
+  </div>
+
+  <ul class="artist-list song-list mt-4 pt-5 row" *ngIf="songs">
+
+    <li *ngFor="let song of songs" class="col-lg-12">
+
+      <div class="pt-2 ml-5 pl-5">
+
+        <section class="title col-lg-12 song-item">
+
+            <a (click)="startPlayer(song)" class="btn btn-success playbutton">
+              <span class="material-icons mt-1 icon">
+                play_arrow
+              </span>
+            </a>
+
+            <a (click)="startPlayer(song)" class="btn btn-success playbutton-mobile ">
+              <span class="material-icons mt-1 icon-mobile">
+                play_arrow
+              </span>
+            </a>
+
+
+            <div class="text-song-mobile">
+              <p style="width:400px;">{{song.name}}</p>
+            </div>
+
+            <span class=" text-song">
+                {{   song.name + ' ' + song.duration}}
+            </span>
+
+            <span class="menu-admin" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+              <a (click)="onDeleteConfirm(song._id)" class="btn btn-danger playbutton mr-4">
+                <span class="material-icons mt-1 icon">
+                 delete
+                </span>
+              </a>
+
+              <a [routerLink]="['/editar-cancion', song._id]" class="btn btn-warning playbutton">
+                <span class="material-icons mt-1 icon">
+                  edit
+                </span>
+              </a>
+
+              <span *ngIf="confirmado == song._id">
+                <a (click)="onCancelSong()" class="btn btn-primary playbutton mr-5" >
+                  <span class="material-icons mt-1 icon">
+                    cancel
+                  </span>
+                </a>
+                <a (click)="onDeleteSong(song._id)" class="btn btn-danger playbutton mr-3" >
+                  <span class="material-icons mt-1 icon">
+                  delete
+                  </span>
+                </a>
+                </span>
+            </span>
+
+          </section>
+
+      </div>
+
+    </li>
+  </ul>
+
+</div>

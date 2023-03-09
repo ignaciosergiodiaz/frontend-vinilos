@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './views/app.component.html',
   providers: [UserService],
   styleUrls: ['./app.component.scss']
 })
